@@ -1,19 +1,18 @@
-  // Accediendo a elementos del DOM
-  const title = document.getElementById("title");
-  const para = document.querySelector("p");
+const btn = document.getElementById("cambiarColor");
 
-  // Manipulando el contenido del DOM
-  title.textContent = "Hola, Raul!";
-  // Creando nuevos elementos
-  const newPara = document.createElement("p");
-  newPara.textContent = "Este es un nuevo párrafo.";            
-  document.body.appendChild(newPara);
+		// Definimos una función para cambiar el color de fondo
+		function cambiarColor() {
+			// Generamos un número aleatorio entre 0 y 255 para cada uno de los colores RGB
+			const red = Math.floor(Math.random() * 256);
+			const green = Math.floor(Math.random() * 256);
+			const blue = Math.floor(Math.random() * 256);
 
+			// Cambiamos el color de fondo de la página utilizando el estilo CSS
+			document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+		}
 
-  // Eliminando elementos existentes
-  const oldPara = document.querySelector(".old");
-  document.body.removeChild(oldPara);
-
+		// Añadimos un evento "click" al botón para que llame a la función "cambiarColor"
+		btn.addEventListener("click", cambiarColor);  
 
 
 
